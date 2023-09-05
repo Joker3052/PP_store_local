@@ -43,7 +43,7 @@ const Register = () => {
     }
     const handleKeyPress = (event) => {
         if (event.key === 'Enter' && e_mail && pass_word&&name&&p_hone&&a_ddress) {
-            handleLogin();
+            handleRegister();
         }
     };
     const handleLogin = () => {

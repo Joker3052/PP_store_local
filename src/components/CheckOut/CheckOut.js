@@ -9,7 +9,10 @@ function CheckOut() {
   // Tính tổng giá và tổng số lượng
   const totalPrice = cart.reduce((total, item) => total + item.price_value * item.quantity, 0);
   const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
-
+  const menPrice = cart.filter((item) => item.type_name === "men").reduce((total, item) => total + item.price_value * item.quantity, 0);
+  const womenPrice = cart.filter((item) => item.type_name === "women").reduce((total, item) => total + item.price_value * item.quantity, 0);
+  const menQuantity = cart.filter((item) => item.type_name === "men").reduce((total, item) => total + item.quantity, 0);
+  const womenQuantity = cart.filter((item) => item.type_name === "women").reduce((total, item) => total + item.quantity, 0);
   return (
     <>
       <div className="container mx-auto p-5">
@@ -36,6 +39,10 @@ function CheckOut() {
               </li>
             ))}
             <div className="totals">
+            <p>women Quantity: {womenQuantity}</p>
+            <p>men Quantity: {menQuantity}</p>
+            <p>men Price: ${menPrice.toFixed(2)}</p>
+            <p>women Price: ${womenPrice.toFixed(2)}</p>
               <p>Total Quantity: {totalQuantity}</p>
               <p>Total Price: ${totalPrice.toFixed(2)}</p>
             </div>

@@ -80,6 +80,7 @@ function Store() {
     getStore();
   }
   const handleAddToCart = (item) => {
+    console.log(item)
     addToCart(item);
     toast.success('Added to cart successfully'); // Hiển thị toast thông báo
   };
